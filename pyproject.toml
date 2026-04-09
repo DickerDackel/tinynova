@@ -1,6 +1,6 @@
 [project]
-name = "FIXME"
-description = "FIXME"
+name = "tinynova"
+description = "tinynova"
 version = "0.0.1"
 readme = "README.md"
 
@@ -16,28 +16,28 @@ classifiers = [
 ]
 
 license = "MIT"
-license-files = ["LICENSE"]
+license-files = [
+    "LICENSE",
+    "LICENSE-kenney-nl.txt"
+]
 
-dependencies = [ ]
+dependencies = [
+    'nova @ git+https://github.com/kadir014/nova-physics-python',
+    'pgcooldown',
+    'pygame-ce',
+    'tinyecs',
+]
 
 [project.scripts]
-FIXME = "package.module:main"
+tinynova = "tinynova.__main__:main"
+
+[tool.setuptools]
+include-package-data = true
 
 [project.urls]
-homepage = "https://github.com/dickerdackel/FIXME"
-bugtracker = "https://github.com/DickerDackel/FIXME/issues"
+homepage = "https://github.com/dickerdackel/tinynova"
+bugtracker = "https://github.com/DickerDackel/tinynova/issues"
 
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
-
-[tool.pytest.ini_options]
-addopts = "-rA"
-testpaths = [
-    "tests",
-]
-
-[tool.cibuildwheel]
-# Don't build for pypy
-skip = "pp*"
-build = ["cp310-*", "cp311-*", "cp312-*", "cp313-*", "cp314-*"]
