@@ -201,7 +201,7 @@ def main():
             ecs.run_system(dt, sys_draw_circle, 'pos', 'radius', renderer=renderer)
 
         renderer.present()
-        window.title = f'{TITLE} - entities={len(ecs.oidx)}  fps={clock.get_fps():.2f}'
+        window.title = f'{TITLE} - entities={len(ecs.eidx)}  fps={clock.get_fps():.2f}'
 
 
 if __name__ == "__main__":
