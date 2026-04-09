@@ -1,0 +1,43 @@
+[project]
+name = "FIXME"
+description = "FIXME"
+version = "0.0.1"
+readme = "README.md"
+
+authors = [
+    { name="Michael Lamertz", email="michael.lamertz@gmail.com" }
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: pygame",
+]
+
+license = "MIT"
+license-files = ["LICENSE"]
+
+dependencies = [ ]
+
+[project.scripts]
+FIXME = "package.module:main"
+
+[project.urls]
+homepage = "https://github.com/dickerdackel/FIXME"
+bugtracker = "https://github.com/DickerDackel/FIXME/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-rA"
+testpaths = [
+    "tests",
+]
+
+[tool.cibuildwheel]
+# Don't build for pypy
+skip = "pp*"
+build = ["cp310-*", "cp311-*", "cp312-*", "cp313-*", "cp314-*"]
